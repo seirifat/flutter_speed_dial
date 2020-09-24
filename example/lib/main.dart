@@ -50,24 +50,22 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
       curve: Curves.bounceIn,
       children: [
         SpeedDialChild(
-          child: Icon(Icons.brush, color: Colors.white),
-          backgroundColor: Colors.deepOrange,
+          child: Icon(Icons.mail, color: Colors.grey),
+          backgroundColor: Colors.white,
           onTap: () => print('FIRST CHILD'),
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
-          labelBackgroundColor: Colors.deepOrangeAccent,
           label: "Lorem Ipsum",
         ),
         SpeedDialChild(
-          child: Icon(Icons.brush, color: Colors.yellow),
-          backgroundColor: Colors.green,
+          child: Icon(Icons.mail, color: Colors.grey),
+          backgroundColor: Colors.white,
           onTap: () => print('SECOND CHILD'),
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
-          labelBackgroundColor: Colors.green,
           label: "Lorem Ipsum diaasda asdad"
         ),
         SpeedDialChild(
-          child: Icon(Icons.keyboard_voice),
-          backgroundColor: Colors.blue,
+          child: Icon(Icons.mail, color: Colors.grey),
+          backgroundColor: Colors.white,
           onTap: () => print('THIRD CHILD'),
           label: "Lorem Ipsum diaasda asdad"
         ),

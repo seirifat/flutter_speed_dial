@@ -86,7 +86,10 @@ class AnimatedChild extends AnimatedWidget {
           color: backgroundColor,
           onPressed: _performAction,
           icon: child,
-          label: Text(label),
+          label: Text(
+            label,
+            style: labelStyle,
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),
