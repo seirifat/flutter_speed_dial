@@ -40,7 +40,9 @@ class AnimatedChild extends AnimatedWidget {
   Widget buildLabel() {
     final Animation<double> animation = listenable;
 
-    if (!((label != null || labelWidget != null) && visible && animation.value == 62.0)) {
+    if (!((label != null || labelWidget != null) &&
+        visible &&
+        animation.value == 62.0)) {
       return Container();
     }
 
@@ -75,41 +77,20 @@ class AnimatedChild extends AnimatedWidget {
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
 
-    final Widget buttonChild = animation.value > 50.0
-        ? Container(
-            width: animation.value,
-            height: animation.value,
-            child: child ?? Container(),
-          )
-        : Container(
-            width: 0.0,
-            height: 0.0,
-          );
-
     return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          buildLabel(),
-          Container(
-            width: 62.0,
-            height: animation.value,
-            padding: EdgeInsets.only(bottom: 62.0 - animation.value),
-            child: Container(
-              height: 62.0,
-              width: animation.value,
-              padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-              child: FloatingActionButton(
-                heroTag: heroTag,
-                onPressed: _performAction,
-                backgroundColor: backgroundColor,
-                foregroundColor: foregroundColor,
-                elevation: elevation ?? 6.0,
-                child: buttonChild,
-              ),
-            ),
-          )
-        ],
+      height: animation.value,
+      padding: EdgeInsets.only(bottom: 62.0 - animation.value),
+      child: Container(
+        padding: EdgeInsets.only(top: 8.0, bottom: 4.0),
+        child: FlatButton.icon(
+          color: backgroundColor,
+          onPressed: _performAction,
+          icon: child,
+          label: Text(label),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ),
       ),
     );
   }

@@ -43,40 +43,33 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
 
   SpeedDial buildSpeedDial() {
     return SpeedDial(
+      overlayColor: Colors.black,
+      overlayOpacity: 0.5,
       animatedIcon: AnimatedIcons.menu_close,
-      animatedIconTheme: IconThemeData(size: 22.0),
-      // child: Icon(Icons.add),
-      onOpen: () => print('OPENING DIAL'),
-      onClose: () => print('DIAL CLOSED'),
       visible: dialVisible,
       curve: Curves.bounceIn,
       children: [
         SpeedDialChild(
-          child: Icon(Icons.accessibility, color: Colors.white),
+          child: Icon(Icons.brush, color: Colors.white),
           backgroundColor: Colors.deepOrange,
           onTap: () => print('FIRST CHILD'),
-          label: 'First Child',
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
           labelBackgroundColor: Colors.deepOrangeAccent,
+          label: "Lorem Ipsum",
         ),
         SpeedDialChild(
-          child: Icon(Icons.brush, color: Colors.white),
+          child: Icon(Icons.brush, color: Colors.yellow),
           backgroundColor: Colors.green,
           onTap: () => print('SECOND CHILD'),
-          label: 'Second Child',
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
           labelBackgroundColor: Colors.green,
+          label: "Lorem Ipsum diaasda asdad"
         ),
         SpeedDialChild(
-          child: Icon(Icons.keyboard_voice, color: Colors.white),
+          child: Icon(Icons.keyboard_voice),
           backgroundColor: Colors.blue,
           onTap: () => print('THIRD CHILD'),
-          labelWidget: Container(
-            color: Colors.blue,
-            margin: EdgeInsets.only(right: 10),
-            padding: EdgeInsets.all(6),
-            child: Text('Custom Label Widget'),
-          ),
+          label: "Lorem Ipsum diaasda asdad"
         ),
       ],
     );
